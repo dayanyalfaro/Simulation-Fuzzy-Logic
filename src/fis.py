@@ -45,7 +45,14 @@ class FuzzyInferenceSystem:
 		self.defuzMethod = self.methods[defuzMethod]
 
 	def infer(self, rules, fsets, outvar):
-		_rules = [FuzzyRule(rule, implication, max, min, lambda x: 1-x) for rule, implication in rules.items()]
-		lx, ly = self.aggrMethod(_rules, fsets, outvar)
-		return self.defuzMethod(lx, ly), lx, ly
+		_rules = []
+		for preced,conseq in rules.items():
+			for c in conseq.split(','):
+				_rules.append(FuzzyRule(preced, c.strip(), max, min, lambda x: 1-x))
+		outvar_dict = self.aggrMethod(_rules, fsets, outvar)
+		results = {}
+		for outvar in outvar_dict:
+			lx, ly = outvar_dict[outvar]
+			results[outvar] = (self.defuzMethod(lx, ly), lx, ly)
+		return results
 

@@ -45,45 +45,45 @@ fuzzy_sets = {
 
 
 s = FuzzyInferenceSystem('mamdani', 'centroid')
-y, lx, ly = s.infer(rules,  fuzzy_sets, speed)
+y, lx, ly = s.infer(rules,  fuzzy_sets, [speed])['Speed']
 print('mamdani', 'centroid',y)
 pl.plot(lx, ly)
 pl.show()
 
 s = FuzzyInferenceSystem('mamdani', 'bisector')
-y, lx, ly = s.infer(rules, fuzzy_sets, speed)
+y, lx, ly = s.infer(rules, fuzzy_sets, [speed])['Speed']
 print('mamdani', 'bisector', y)
 
 s = FuzzyInferenceSystem('mamdani', 'meanmax')
-y, lx, ly = s.infer(rules,fuzzy_sets, speed)
+y, lx, ly = s.infer(rules,fuzzy_sets, [speed])['Speed']
 print('mamdani', 'meanmax', y)
 
 s = FuzzyInferenceSystem('mamdani', 'lastmax')
-y, lx, ly = s.infer(rules, fuzzy_sets, speed)
+y, lx, ly = s.infer(rules, fuzzy_sets, [speed])['Speed']
 print('mamdani', 'lastmax', y)
 
 s = FuzzyInferenceSystem('mamdani', 'firstmax')
-y, lx, ly = s.infer(rules, fuzzy_sets, speed)
+y, lx, ly = s.infer(rules, fuzzy_sets, [speed])['Speed']
 print('mamdani', 'firstmax', y)
 
 s = FuzzyInferenceSystem('larsen', 'centroid')
-y, lx, ly = s.infer(rules, fuzzy_sets, speed)
+y, lx, ly = s.infer(rules, fuzzy_sets, [speed])['Speed']
 print('larsen', 'centroid',y)
 
 s = FuzzyInferenceSystem('larsen', 'bisector')
-y, lx, ly = s.infer(rules,  fuzzy_sets, speed)
+y, lx, ly = s.infer(rules,  fuzzy_sets, [speed])['Speed']
 print('larsen', 'bisector', y)
 
 s = FuzzyInferenceSystem('larsen', 'meanmax')
-y, lx, ly = s.infer(rules,  fuzzy_sets, speed)
+y, lx, ly = s.infer(rules,  fuzzy_sets, [speed])['Speed']
 print('larsen', 'meanmax', y)
 
 s = FuzzyInferenceSystem('larsen', 'lastmax')
-y, lx, ly = s.infer(rules,fuzzy_sets, speed)
+y, lx, ly = s.infer(rules,fuzzy_sets, [speed])['Speed']
 print('larsen', 'lastmax', y)
 
 s = FuzzyInferenceSystem('larsen', 'firstmax')
-y, lx, ly = s.infer(rules, fuzzy_sets, speed)
+y, lx, ly = s.infer(rules, fuzzy_sets, [speed])['Speed']
 print('larsen', 'firstmax', y)
 pl.plot(lx, ly)
 pl.show()
